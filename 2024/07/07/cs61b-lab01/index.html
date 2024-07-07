@@ -4,15 +4,25 @@
   <meta charset="utf-8">
   
   
-  <title>Hexo</title>
+  <title>cs61b-lab01 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="Lab01:Setup - gitGitGit简介Git 是一种分布式版本控制系统，而不是集中式版本控制系统。这意味着每个开发人员的计算机 存储整个项目的整个历史记录（包括所有旧版本）！这与Dropbox等工具不同，在Dropbox中，旧版本存储在一个 其他人拥有的远程服务器。我们把整个历史称为一个整体 项目 A “存储库”。存储库存储在本地的事实导致 我们能够在自己的计算机上本地使用 Git，即">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cs61b-lab01">
+<meta property="og:url" content="http://example.com/2024/07/07/cs61b-lab01/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Lab01:Setup - gitGitGit简介Git 是一种分布式版本控制系统，而不是集中式版本控制系统。这意味着每个开发人员的计算机 存储整个项目的整个历史记录（包括所有旧版本）！这与Dropbox等工具不同，在Dropbox中，旧版本存储在一个 其他人拥有的远程服务器。我们把整个历史称为一个整体 项目 A “存储库”。存储库存储在本地的事实导致 我们能够在自己的计算机上本地使用 Git，即">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/git.png">
+<meta property="og:image" content="http://example.com/branch1.png">
+<meta property="og:image" content="http://example.com/branch2.png">
+<meta property="og:image" content="http://example.com/merge.png">
+<meta property="og:image" content="http://example.com/merge1.png">
+<meta property="article:published_time" content="2024-07-07T03:15:46.000Z">
+<meta property="article:modified_time" content="2024-07-07T07:07:20.613Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/git.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -67,9 +77,7 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-cs61b-lab01" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-cs61b-lab01" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/07/07/cs61b-lab01/" class="article-date">
   <time class="dt-published" datetime="2024-07-07T03:15:46.000Z" itemprop="datePublished">2024-07-07</time>
@@ -82,8 +90,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/07/07/cs61b-lab01/">cs61b-lab01</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      cs61b-lab01
     </h1>
   
 
@@ -342,299 +350,19 @@ repo - stages - workpalce
     </footer>
   </div>
   
-</article>
-
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-makefile" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/07/03/makefile/" class="article-date">
-  <time class="dt-published" datetime="2024-07-03T03:10:52.000Z" itemprop="datePublished">2024-07-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/07/03/makefile/">Makefile与CMake（于仕琪老师笔记）</a>
-    </h1>
+    <a href="/2024/07/03/makefile/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Makefile与CMake（于仕琪老师笔记）</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="makefile"><a href="#makefile" class="headerlink" title="makefile"></a>makefile</h1><h2 id="1-常见的c-编译指令"><a href="#1-常见的c-编译指令" class="headerlink" title="1 常见的c++编译指令"></a>1 常见的c++编译指令</h2><p><code>g++ &lt;*.cpp *.cpp..(源代码文件)&gt; -o &lt;可执行文件文件名&gt; </code></p>
-<p><code>g++ &lt;*.cpp *.cpp..(源代码文件)&gt; -c &lt;*.o文件，只经过编译，未链接的文件，名字是源代码的文件名&gt;</code></p>
-<p><code>g++ *.o -o &lt;可执行文件名&gt;</code> 将所有的.o文件链接成可执行文件</p>
-<ul>
-<li>为什么使用 -c 编译；而不是使用编译链接一步完成的方式？</li>
-</ul>
-<p>对源代码文件执行 -c 编译的好处在于：如果我们修改了某个源文件，我们在编译时，只需要对被修改的文件执行 -c 编译（编译为.o 文件），当确定所有文件无误后，进行链接，而不用像编译链接一步完成，之后对其中的少数几个文件修改后，需要对所有源代码文件进行重新编译，当文件数量很多时，一次编译会花上数个小时的时间，-c 编译会极大的提高效率。<br><code>-Wall</code>，显示所有的warning。</p>
-<ul>
-<li>makefile意义</li>
-</ul>
-<p>当源代码文件有非常多时，在命令行中输入单条指令变得繁琐，我们可以将这些命令写在一个脚本文件中，这种脚本文件有特定的格式–makefile。</p>
-<h2 id="2-Makefile"><a href="#2-Makefile" class="headerlink" title="2 Makefile"></a>2 Makefile</h2><h3 id="version-1"><a href="#version-1" class="headerlink" title="version 1"></a>version 1</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hello: main.cpp printhello.cpp factorial.cpp</span><br><span class="line">    g++ -o hello main.cpp printhello.cpp factorial.cpp</span><br></pre></td></tr></table></figure>
-<p> <strong>g++前必须加一个tab，不能是空格</strong><br> 上面的tab符的意义：我要生成的目标为：<code>hello</code>；它依赖于<code>main.cpp printhello.cpp factorial.cpp</code>，使用<code>g++ -o hello main.cpp printhello.cpp factorial.cpp</code>命令生成这个目标。<br>makefile文件完成以后，在当前目录下使用<code>make</code>命令，（make命令会自动去找当前文件下的Makefile文件，如果文件名不是Makefile，可以使用命令<code>make -f &lt;Makefile文件名&gt;</code>指定文件名）.</p>
-<p>如果多次使用make命令，make会检查每个源代码的文件的生成时间，如果生成时间晚于目标生成时间，则执行Makefile脚本，如果不存在，则不执行编译。</p>
-<ul>
-<li>缺点在于，使用编译链接一步完成。</li>
-</ul>
-<h3 id="version-2"><a href="#version-2" class="headerlink" title="version 2"></a>version 2</h3><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">CXX = g++</span><br><span class="line">TARGET = hello</span><br><span class="line">OBJ = main.o printhello.o factorial.o</span><br><span class="line"></span><br><span class="line"><span class="variable">$(TARGET)</span>: <span class="variable">$(OBJ)</span></span><br><span class="line">    <span class="variable">$(CXX)</span> -o <span class="variable">$(TARGET)</span> <span class="variable">$(OBJ)</span></span><br><span class="line"></span><br><span class="line"><span class="section">main.o: main.cpp</span></span><br><span class="line">    <span class="variable">$(CXX)</span> -c main.cpp</span><br><span class="line"></span><br><span class="line"><span class="section">printhello.o: printhello.cpp</span></span><br><span class="line">    <span class="variable">$(CXX)</span> -c printhello.cpp</span><br><span class="line"></span><br><span class="line"><span class="section">factorial.o: factorial.cpp</span></span><br><span class="line">    <span class="variable">$(CXX)</span> -c factorial.cpp</span><br></pre></td></tr></table></figure>
-<ul>
-<li>优点：编译链接分开，源文件修改后，只需要编译修改过的源文件</li>
-</ul>
-<h3 id="version-3"><a href="#version-3" class="headerlink" title="version 3"></a>version 3</h3><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">CXX = g++</span><br><span class="line">TARGET = hello</span><br><span class="line">OBJ = main.o printhello.o factorial.o </span><br><span class="line"><span class="comment"># 需要加入文件时，在这里加入.o文件就行</span></span><br><span class="line"></span><br><span class="line">CXXFLAGS = -c -Wall</span><br><span class="line"></span><br><span class="line"><span class="variable">$(TARGET)</span>: <span class="variable">$(OBJ)</span></span><br><span class="line">    <span class="variable">$(CXX)</span> -o <span class="variable">$@</span> <span class="variable">$^</span> </span><br><span class="line"><span class="comment"># $@代表$(TARGET)，$^代表$(OBJ),$^ 尖尖朝上，依赖中的所有项，尖尖朝左，指依赖中的第一项。</span></span><br><span class="line"></span><br><span class="line"><span class="section">%.o: %.cpp #百分号是什么意思</span></span><br><span class="line">    <span class="variable">$(CXX)</span> <span class="variable">$(CXXFLAGS)</span> <span class="variable">$&lt;</span> -o <span class="variable">$@</span></span><br><span class="line"></span><br><span class="line"><span class="meta"><span class="keyword">.PHONY</span>: clean</span></span><br><span class="line"><span class="section">clean: #目标：依赖，的意思</span></span><br><span class="line">    rm -f *.o <span class="variable">$(TARGET)</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="version-4"><a href="#version-4" class="headerlink" title="version 4"></a>version 4</h3><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">CXX = g++</span><br><span class="line">TARGET = hello</span><br><span class="line">SRC = <span class="variable">$(<span class="built_in">wildcard</span> *.cpp)</span> </span><br><span class="line"><span class="comment"># 将当前目录下的所有cpp文件拿来编译，新增就会编译，SRC：使用 wildcard 函数查找当前目录下所有的 .cpp 文件，并将其存储在 SRC 变量中。</span></span><br><span class="line">OBJ = 4(patsubst %.cpp,%.o,<span class="variable">$(SRC)</span>)</span><br><span class="line"><span class="comment"># OBJ：使用 patsubst 函数将所有的 .cpp 文件名替换为 .o 文件名（对象文件名），并将结果存储在 OBJ 变量中。</span></span><br><span class="line"></span><br><span class="line">CXXFLAGS = -c -Wall</span><br><span class="line"></span><br><span class="line"><span class="variable">$(TARGET)</span>: <span class="variable">$(OBJ)</span></span><br><span class="line">    <span class="variable">$(CXX)</span> -o <span class="variable">$@</span> <span class="variable">$^</span> </span><br><span class="line"><span class="comment"># $@：自动变量，表示规则中的目标文件名，这里是 hello。</span></span><br><span class="line"><span class="comment"># $^：自动变量，表示所有的依赖文件，这里是所有的 .o 文件。</span></span><br><span class="line"><span class="section">%.o: %.cpp </span></span><br><span class="line">    <span class="variable">$(CXX)</span> <span class="variable">$(CXXFLAGS)</span> <span class="variable">$&lt;</span> -o <span class="variable">$@</span></span><br><span class="line"><span class="comment"># %.o: %.cpp：通配符规则，表示如何从 .cpp 文件生成对应的 .o 文件。</span></span><br><span class="line"><span class="comment"># $&lt;：自动变量，表示第一个依赖文件，这里是对应的 .cpp 文件。</span></span><br><span class="line"><span class="comment"># $@：自动变量，表示目标文件名，这里是对应的 .o 文件。</span></span><br><span class="line"></span><br><span class="line"><span class="meta"><span class="keyword">.PHONY</span>: clean</span></span><br><span class="line"><span class="section">clean: </span></span><br><span class="line">    rm -f *.o <span class="variable">$(TARGET)</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="GPT："><a href="#GPT：" class="headerlink" title="GPT："></a>GPT：</h2><h3 id="符号"><a href="#符号" class="headerlink" title="$符号"></a><code>$</code>符号</h3><p>在<code>Makefile</code>中，<code>$</code>符号用于引用变量和自动变量。</p>
-<ul>
-<li><strong>变量引用</strong>：用来引用之前定义的变量。例如，<code>$(CXX)</code>引用了变量<code>CXX</code>的值。</li>
-<li><strong>自动变量</strong>：用来引用规则中的目标文件或依赖文件，具体会在后面详细解释。</li>
-</ul>
-<h3 id="自动变量"><a href="#自动变量" class="headerlink" title="自动变量"></a>自动变量</h3><p>自动变量是<code>Makefile</code>中的特殊变量，用于在规则中引用目标文件和依赖文件。常见的自动变量包括：</p>
-<ul>
-<li>**<code>$@</code>**：表示规则中的目标文件名。例如，在规则<code>%.o: %.cpp</code>中，<code>$@</code>表示生成的<code>.o</code>文件名。</li>
-<li>**<code>$&lt;</code>**：表示第一个依赖文件名。例如，在规则<code>%.o: %.cpp</code>中，<code>$&lt;</code>表示被编译的<code>.cpp</code>文件名。</li>
-<li>**<code>$^</code>**：表示所有的依赖文件名列表，包含重复的文件名。例如，在<code>$(TARGET): $(OBJ)</code>规则中，<code>$^</code>表示所有的<code>.o</code>文件名。</li>
-<li>**<code>$?</code>**：表示所有比目标文件更新的依赖文件名列表。</li>
-</ul>
-<h3 id="通配符规则"><a href="#通配符规则" class="headerlink" title="通配符规则"></a>通配符规则</h3><p>通配符规则是<code>Makefile</code>中的一种模式规则，用于定义一组文件的生成方式。通配符规则使用百分号<code>%</code>作为通配符，表示任意字符序列。常见的通配符规则包括：</p>
-<ul>
-<li>**<code>%.o: %.cpp</code>**：表示所有的<code>.o</code>文件可以通过相应的<code>.cpp</code>文件生成。这里的<code>%</code>表示通配符，匹配文件名的任意部分。</li>
-</ul>
-<p>具体来看，这段规则和命令的意思是：</p>
-<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">%.o: %.cpp</span></span><br><span class="line">    <span class="variable">$(CXX)</span> <span class="variable">$(CXXFLAGS)</span> <span class="variable">$&lt;</span> -o <span class="variable">$@</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>**<code>%.o: %.cpp</code>**：表示匹配任意文件名的<code>.cpp</code>文件（例如<code>foo.cpp</code>），生成相应的<code>.o</code>文件（例如<code>foo.o</code>）。</li>
-<li>**<code>$(CXX)</code>**：变量，表示C++编译器。</li>
-<li>**<code>$(CXXFLAGS)</code>**：变量，表示编译标志。</li>
-<li>**<code>$&lt;</code>**：自动变量，表示第一个依赖文件（即源文件<code>foo.cpp</code>）。</li>
-<li>**<code>$@</code>**：自动变量，表示目标文件（即生成的对象文件<code>foo.o</code>）。</li>
-</ul>
-<p>这条规则的意思是：将所有的<code>.cpp</code>文件编译成相应的<code>.o</code>文件。</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
-<li><strong><code>$</code>符号</strong>：用于引用变量和自动变量。</li>
-<li><strong>自动变量</strong>：特殊变量，用于引用规则中的目标文件和依赖文件，例如<code>$@</code>、<code>$&lt;</code>和<code>$^</code>。</li>
-<li><strong>通配符规则</strong>：使用<code>%</code>作为通配符，定义一组文件的生成方式，例如<code>%.o: %.cpp</code>表示所有<code>.o</code>文件由相应的<code>.cpp</code>文件生成。</li>
-</ul>
-<p>这些特性使得<code>Makefile</code>在处理大量文件时非常灵活和高效。</p>
-<h1 id="CMake"><a href="#CMake" class="headerlink" title="CMake"></a>CMake</h1><p>Makefile是无法移植的，CMake是跨平台的<br>CMake文名：CMakeLists </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cmake_minimum_required(VERSION 3.10)</span><br><span class="line">project(hello)</span><br><span class="line">add_executable(hello main.cpp factorial.cpp printhello.cpp)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>cmake会根据CMakelists我们生成优秀的makefile。<br>但是cmake会生成很多文件，难以管理，我们可以创建一个build 目录，转这个目录下执行上层目录的cmakelists，生成的文件在此目录下。这也就是很多ide中会生成一个build目录，（QT）。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/07/03/makefile/" data-id="cly5cpit100005kta7ndjby8b" data-title="Makefile与CMake（于仕琪老师笔记）" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-
-  
-    <article id="post-GDB" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/07/02/GDB/" class="article-date">
-  <time class="dt-published" datetime="2024-07-02T14:02:58.000Z" itemprop="datePublished">2024-07-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/07/02/GDB/">GDB</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/07/02/GDB/" data-id="cly4inq220000d4ta29juch1h" data-title="GDB" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-数据结构(CS61B)md" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/06/28/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84(CS61B)md/" class="article-date">
-  <time class="dt-published" datetime="2024-06-28T14:32:56.000Z" itemprop="datePublished">2024-06-28</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/06/28/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84(CS61B)md/">数据结构(CS61B)-图.md</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="lecture-23-Graph-Traversals-and-Implementations"><a href="#lecture-23-Graph-Traversals-and-Implementations" class="headerlink" title="lecture 23 Graph Traversals and Implementations"></a>lecture 23 Graph Traversals and Implementations</h1><h2 id="图论基础知识"><a href="#图论基础知识" class="headerlink" title="图论基础知识"></a>图论基础知识</h2><h3 id="1-图是一个在现实生活中更为常见的数据结构："><a href="#1-图是一个在现实生活中更为常见的数据结构：" class="headerlink" title="1 图是一个在现实生活中更为常见的数据结构："></a>1 图是一个在现实生活中更为常见的数据结构：</h3><table>
-<thead>
-<tr>
-<th>应用</th>
-<th>节点</th>
-<th>连接</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>地图</td>
-<td>十字路口</td>
-<td>公路</td>
-</tr>
-<tr>
-<td>网络内容</td>
-<td>网页</td>
-<td>超链接</td>
-</tr>
-<tr>
-<td>电路</td>
-<td>元器件</td>
-<td>导线</td>
-</tr>
-<tr>
-<td>任务调度</td>
-<td>任务</td>
-<td>限制条件</td>
-</tr>
-</tbody></table>
-<p><strong>图</strong>：由顶点和边组成的数据结构。在图中，顶点（节点）通过边（连接）相互连接。边与路径的不同，边是否直接相连；路径是指从一个顶点到另一个顶点所经过的边的序列。</p>
-<ul>
-<li>路径：由边顺序连接的一系列顶点。</li>
-</ul>
-<p>A-&gt;B-&gt;A，是一条路径，但是不是简单路径。因为其中的A重复了两次。</p>
-<p>A-&gt;B-&gt;C-&gt;B-&gt;A,是一条路径，但是不是简单路径。</p>
-<ul>
-<li>简单路径：是一条没有重复顶点的路径。</li>
-</ul>
-<p>A-&gt;B-&gt;C,是一条简单路径。<br>A-&gt;B-&gt;C-&gt;B，不是一条简单路径，但是是一条路径。</p>
-<ul>
-<li>环(Cycle)：是一条 <strong>至少含有一条边且起点和终点相同的</strong> 路径。</li>
-</ul>
-<p>A-&gt;B-&gt;A,是一条路径，由于他的起点和终点相同，所以是一个环。</p>
-<ul>
-<li>简单环：是一条（除了起点和终点必须相同之外）不含有重复顶点和边的环。</li>
-</ul>
-<p>A-&gt;B-&gt;A,在有向图中，是一个简单环，在无向图中不是一个简单环。（有待商榷）</p>
-<p>A-&gt;B-&gt;C-&gt;A，是一个简单环</p>
-<ul>
-<li><p>路径或环的长度为其中所包含的边数。</p>
-</li>
-<li><p><strong>简单图</strong>：没有自环和平行边的图。</p>
-</li>
-<li><p><strong>自环</strong>：一个顶点到自身的<strong>边</strong>。在简单图中，自环是不允许的，但路径中可以包含从自身到自身的顶点，这种<strong>路径</strong>称为一个环。</p>
-</li>
-<li><p><strong>平行边</strong>：两个顶点之间有多条边。在简单图中，两顶点之间只允许有一条边。 无向图只能有一条边，允许有向图中的两点之间方向不同的两条边。</p>
-</li>
-<li><p><strong>连通图</strong>：图中任选两点他们之间都有路径，则是连通图。一个非连通的图由若干连通的部分组成，（连通的部分）他们都是其<strong>极大连通子图</strong>（连通分量）。</p>
-</li>
-<li><p><strong>树</strong>：是一幅无<strong>环连通图</strong>，互不相连的树组成的集合成为森林。<strong>连通图的生成树是他的一幅连通子图</strong>，它含有图中所有顶点且是一棵树。<strong>图的生成树森林是它的所有连通子图的生成树的集合</strong>。</p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/06/28/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84(CS61B)md/" data-id="clxytnkkh00019wtacd001ak6" data-title="数据结构(CS61B)-图.md" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/06/28/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2024-06-28T13:32:26.617Z" itemprop="datePublished">2024-06-28</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/06/28/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/06/28/hello-world/" data-id="clxytnkke00009wtad48wchgg" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
 </section>
